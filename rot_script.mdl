@@ -1,0 +1,2847 @@
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 0
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame000.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 5
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame001.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 10
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame002.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 15
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame003.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 20
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame004.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 25
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame005.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 30
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame006.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 35
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame007.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 40
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame008.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 45
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame009.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 50
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame010.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 55
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame011.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 60
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame012.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 65
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame013.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 70
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame014.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 75
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame015.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 80
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame016.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 85
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame017.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 90
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame018.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 95
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame019.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 100
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame020.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 105
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame021.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 110
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame022.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 115
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame023.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 120
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame024.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 125
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame025.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 130
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame026.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 135
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame027.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 140
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame028.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 145
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame029.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 150
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame030.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 155
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame031.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 160
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame032.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 165
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame033.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 170
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame034.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 175
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame035.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 180
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame036.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 185
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame037.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 190
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame038.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 195
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame039.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 200
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame040.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 205
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame041.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 210
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame042.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 215
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame043.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 220
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame044.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 225
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame045.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 230
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame046.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 235
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame047.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 240
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame048.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 245
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame049.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 250
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame050.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 255
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame051.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 260
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame052.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 265
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame053.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 270
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame054.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 275
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame055.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 280
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame056.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 285
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame057.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 290
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame058.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 295
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame059.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 300
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame060.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 305
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame061.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 310
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame062.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 315
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame063.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 320
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame064.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 325
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame065.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 330
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame066.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 335
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame067.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 340
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame068.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 345
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame069.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 350
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame070.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 355
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame071.png
+        
+
+//base
+push
+move 250 250 0
+rotate y 45
+rotate x 360
+        
+//body
+push
+scale 1 .5 .5
+sphere 0 0 0 100
+        
+//top
+push
+move 0 150 0
+sphere 0 0 0 50
+        
+//bottom
+pop
+push
+move 0 -150 0
+sphere 0 0 0 50
+
+//right
+pop
+push
+move 150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+        
+//left
+pop
+push
+move -150 0 0
+scale .5 2 2
+sphere 0 0 0 50
+
+save frame072.png
+        
