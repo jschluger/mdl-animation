@@ -153,6 +153,7 @@ void make_animation( char * name ) {
     e = execlp("convert", "convert", "-delay", "3", name_arg, name, NULL);
     printf("e: %d errno: %d: %s\n", e, errno, strerror(errno));
   }
+}
 
 /*======== void swap() ==========
 Inputs: int * a, int * b 
