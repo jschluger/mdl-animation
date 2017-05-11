@@ -2,6 +2,7 @@
 #define STACK_H
 
 #define STACK_SIZE 2
+#define TOP_OF_(cstack) cstack->data[cstack->top]
 
 struct stack {
   int size;

@@ -9,4 +9,10 @@ void save_ppm( screen s, char *file);
 void save_extension( screen s, char *file);
 void display( screen s);
 void make_animation( char * name );
+void clear_screen( screen s, color c );
+void save_ppm( screen s, char *file);
+void save_extension( screen s, char *file);
+void display( screen s);
+void swap( int * a, int * b );
+
 #endif

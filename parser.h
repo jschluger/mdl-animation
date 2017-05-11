@@ -5,6 +5,7 @@
 #include "matrix.h"
 
 #define MAX_COMMANDS 512
+#define STEP .1
 
 extern int lastop;
 
@@ -145,8 +146,3 @@ struct vary_node ** second_pass();
 void print_pcode();
 void my_main();
 #endif
-
-
-
-
-

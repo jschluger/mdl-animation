@@ -46,18 +46,9 @@ Sets every color in screen s to black
 02/12/10 09:13:40
 jdyrlandweaver
 ====================*/
-void clear_screen( screen s ) {
+void clear_screen( screen s,   color c ) {
 
   int x, y;
-  color c;
-
-  /* c.red = 0; */
-  /* c.green = 0; */
-  /* c.blue = 0; */
-
-  c.red = 255;
-  c.green = 255;
-  c.blue = 255;
 
   for ( y=0; y < YRES; y++ )
     for ( x=0; x < XRES; x++)      
@@ -120,6 +111,7 @@ void save_extension( screen s, char *file) {
     fprintf(f, "\n");
   }
   pclose(f);
+  printf("\n--> image saved to %s <--\n", file);
 }
 
 
@@ -132,7 +124,7 @@ Will display the screen s on your monitor
 jdyrlandweaver
 ====================*/
 void display( screen s) {
- 
+
   int x, y;
   FILE *f;
 
@@ -148,7 +140,6 @@ void display( screen s) {
   pclose(f);
 }
 
-
 void make_animation( char * name ) {
 
   int e, f;
@@ -162,4 +153,17 @@ void make_animation( char * name ) {
     e = execlp("convert", "convert", "-delay", "3", name_arg, name, NULL);
     printf("e: %d errno: %d: %s\n", e, errno, strerror(errno));
   }
+
+/*======== void swap() ==========
+Inputs: int * a, int * b 
+Returns:
+Swaps values at a and b
+
+02/14/17 18:25:30
+jschluger
+====================*/
+void swap( int * a, int * b ) {
+  int tmp = *a;
+  *a = *b;
+  *b = tmp;
 }

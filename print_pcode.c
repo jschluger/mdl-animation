@@ -192,7 +192,7 @@ void print_pcode()
 	case DISPLAY:
 	  printf("Display");
 	  break;
-    }
+	}
       printf("\n");
     }
 }
