@@ -72,8 +72,58 @@ void first_pass() {
   //in order to use name and num_frames
   //they must be extern variables
   extern int num_frames;
-  extern char name[128]; 
+  extern char name[128];
 
+  char frames = 0;
+  char vary = 0;
+  char basename = 0;
+  int i;
+  
+  for (i=0;i<lastop;i++) {  
+    printf("(first pass)%d: ",i);
+    switch (op[i].opcode)
+      {
+	
+      case FRAMES:
+	frames = 1;
+	num_frames = op[i].op.frames.num_frames;
+	////
+	printf("Num frames: %4.0f",op[i].op.frames.num_frames);
+	break;
+	
+      case VARY:
+	vary = 1;
+
+	////
+	printf("Vary: %4.0f %4.0f, %4.0f %4.0f",
+	       op[i].op.vary.start_frame,
+	       op[i].op.vary.end_frame,
+	       op[i].op.vary.start_val,
+	       op[i].op.vary.end_val);
+	break;
+	
+      case BASENAME:
+	basename = 1;
+	strncpy( name, op[i].op.basename.p->name, sizeof(name) );
+	////
+	printf("Basename: %s",op[i].op.basename.p->name);
+	break;
+      }
+    printf("\n");
+    }
+  if ( vary && ! frames ) {
+    printf("error: vary found, but frames not set\n"); 
+    exit(14);
+  }
+  if ( frames ) {
+      if ( !basename ) {
+	strncpy( name, "frame", sizeof(name) );
+	printf( "no basename set, using default '%s'\n", name );
+      }
+      printf( "num_frames: %d\nname: '%s'\n", num_frames, name );
+      struct vary_node ** nodes = second_pass();
+  }
+    
   return;
 }
 
@@ -99,6 +149,12 @@ void first_pass() {
   jdyrlandweaver
   ====================*/
 struct vary_node ** second_pass() {
+  struct vary_node* knobs[num_frames];
+  int i;
+  for (i =0; i<num_frames; i++)
+    strncpy( knobs[i]->name, "lit", sizeof(knobs[i]->name));
+
+  printf( "%s\n", knobs[5] -> name);
   return NULL;
 }
 
@@ -160,8 +216,9 @@ void print_knobs() {
   ====================*/
 void my_main() {
 
+  first_pass();
+  
   int i;
-
   screen s;
 
   struct matrix * make;
@@ -185,7 +242,7 @@ void my_main() {
   c.green = 255;
   
   clear_screen( s, back );
-
+  
   for (i=0;i<lastop;i++) {  
     printf("%d: ",i);
     switch (op[i].opcode)
@@ -383,9 +440,6 @@ void my_main() {
 	    printf("\tknob: %s",op[i].op.rotate.p->name);
 	  }
 	break;
-      case BASENAME:
-	printf("Basename: %s",op[i].op.basename.p->name);
-	break;
       case SAVE_KNOBS:
 	printf("Save knobs: %s",op[i].op.save_knobs.p->name);
 	break;
@@ -395,16 +449,6 @@ void my_main() {
 	       op[i].op.tween.end_frame,
 	       op[i].op.tween.knob_list0->name,
 	       op[i].op.tween.knob_list1->name);
-	break;
-      case FRAMES:
-	printf("Num frames: %4.0f",op[i].op.frames.num_frames);
-	break;
-      case VARY:
-	printf("Vary: %4.0f %4.0f, %4.0f %4.0f",
-	       op[i].op.vary.start_frame,
-	       op[i].op.vary.end_frame,
-	       op[i].op.vary.start_val,
-	       op[i].op.vary.end_val);
 	break;
       case PUSH:
 	push( cstack );
