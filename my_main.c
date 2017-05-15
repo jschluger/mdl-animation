@@ -168,13 +168,13 @@ struct vary_node ** second_pass() {
 	    strncpy( tmp->name, op[i].op.vary.p->name, sizeof(tmp->name) );
 	    tmp->value = j * ((op[i].op.vary.end_val - op[i].op.vary.start_val) /
 			      (op[i].op.vary.end_frame - op[i].op.vary.start_frame) );
-	    if (knobs[j])
-	      knobs[j]-> next = tmp;
+
+	    tmp->next = knobs[j];
 	    knobs[j] = tmp;
-	    printf("(second pass) setting vary %s to %.3f for frame %d\n",
+	    printf("(second pass) setting vary %s to %.3f for frame %d, next = %p\n",
 		   tmp->name,
-		   tmp-> value,
-		   j);
+		   tmp->value,
+		   j, tmp->next);
 	  }
 	}
 	////
@@ -252,7 +252,18 @@ void my_main() {
   struct vary_node ** knobs = NULL;
   if ( first_pass() )
     knobs = second_pass();
+  int k;
+  for (k = 0;k < num_frames;k++) {
+    struct vary_node * tmp = knobs[k];
 
+    printf("frame %d", k);
+    while (tmp){
+      printf("\t%s: %.3f, ", tmp->name, tmp->value);
+      tmp = tmp->next;
+    }
+    printf("\n");
+  }
+    
   print_knobs();
   
   int i;
