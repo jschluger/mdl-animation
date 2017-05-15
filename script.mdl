@@ -46,3 +46,4 @@ box -50 0 40 50 120 80
 display
 save robot.png
 vary k 0 50 0 1
+vary other_knob 0 15 0 4

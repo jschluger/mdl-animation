@@ -68,7 +68,7 @@
 
   jdyrlandweaver
   ====================*/
-void first_pass() {
+int first_pass() {
   //in order to use name and num_frames
   //they must be extern variables
   extern int num_frames;
@@ -121,10 +121,10 @@ void first_pass() {
 	printf( "no basename set, using default '%s'\n", name );
       }
       printf( "num_frames: %d\nname: '%s'\n", num_frames, name );
-      struct vary_node ** nodes = second_pass();
+      return 1;
   }
     
-  return;
+  return 0;
 }
 
 /*======== struct vary_node ** second_pass() ==========
@@ -149,13 +149,46 @@ void first_pass() {
   jdyrlandweaver
   ====================*/
 struct vary_node ** second_pass() {
-  struct vary_node* knobs[num_frames];
-  int i;
-  for (i =0; i<num_frames; i++)
-    strncpy( knobs[i]->name, "lit", sizeof(knobs[i]->name));
+  struct vary_node ** knobs;
+  knobs = calloc( num_frames, sizeof(struct vary_node *) );
+  
+  int i, j;
+  
+  printf("(second pass)%d\n", sizeof(knobs));
 
-  printf( "%s\n", knobs[5] -> name);
-  return NULL;
+  for (i=0;i<lastop;i++) {
+    printf("(second pass)%d: ",i);
+    switch (op[i].opcode)
+      {
+
+      case VARY:
+	for (j = 0; j < num_frames; j++) {
+	  if (j >= op[i].op.vary.start_frame && j <= op[i].op.vary.end_frame ) {
+	    struct vary_node * tmp = (struct vary_node *)malloc(sizeof(struct vary_node));
+	    strncpy( tmp->name, op[i].op.vary.p->name, sizeof(tmp->name) );
+	    tmp->value = j * ((op[i].op.vary.end_val - op[i].op.vary.start_val) /
+			      (op[i].op.vary.end_frame - op[i].op.vary.start_frame) );
+	    if (knobs[j])
+	      knobs[j]-> next = tmp;
+	    knobs[j] = tmp;
+	    printf("(second pass) setting vary %s to %.3f for frame %d\n",
+		   tmp->name,
+		   tmp-> value,
+		   j);
+	  }
+	}
+	////
+	printf("setting Vary: %4.0f %4.0f, %4.0f %4.0f",
+	       op[i].op.vary.start_frame,
+	       op[i].op.vary.end_frame,
+	       op[i].op.vary.start_val,
+	       op[i].op.vary.end_val);
+	break;
+      }
+    printf("\n");
+  }
+  
+  return knobs;
 }
 
 
@@ -216,7 +249,11 @@ void print_knobs() {
   ====================*/
 void my_main() {
 
-  first_pass();
+  struct vary_node ** knobs = NULL;
+  if ( first_pass() )
+    knobs = second_pass();
+
+  print_knobs();
   
   int i;
   screen s;
