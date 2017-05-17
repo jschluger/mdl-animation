@@ -272,6 +272,7 @@ void my_main() {
   int i, frame;
   screen s;
   double tmp_value;
+  char frame_name[150];
   
   struct matrix * make;
   make = NULL;
@@ -447,12 +448,11 @@ void my_main() {
 		 op[i].op.set.p->s.value);
 	  break;
 	case MOVE:
-	
 	  tmp_value = 1;
 	  if (op[i].op.move.p != NULL){
 	    struct vary_node * tmp;
 	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
-	      if ( !strcmp(tmp->name, op[i].op.scale.p->name) ){
+	      if ( !strcmp(tmp->name, op[i].op.move.p->name) ){
 		tmp_value = tmp->value;
 		break;
 	      }
@@ -473,9 +473,19 @@ void my_main() {
 	    }
 	  break;
 	case SCALE:
-	  make = make_scale( op[i].op.scale.d[0],
-			     op[i].op.scale.d[1],
-			     op[i].op.scale.d[2] );
+	  tmp_value = 1;
+	  if (op[i].op.move.p != NULL){
+	    struct vary_node * tmp;
+	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
+	      if ( !strcmp(tmp->name, op[i].op.scale.p->name) ){
+		tmp_value = tmp->value;
+		break;
+	      }
+	    }
+	  }
+	  make = make_scale( op[i].op.scale.d[0] * tmp_value,
+			      op[i].op.scale.d[1] * tmp_value,
+			      op[i].op.scale.d[2] * tmp_value );
 	  matrix_mult( TOP_OF_(cstack), make );
 	  TOP_OF_(cstack) = make;
 	  ////
@@ -484,16 +494,26 @@ void my_main() {
 		 op[i].op.scale.d[2]);
 	  if (op[i].op.scale.p != NULL)
 	    {
-	      printf("\tknob: %s",op[i].op.scale.p->name);
+	      printf("\tknob: %s = %.2f",op[i].op.scale.p->name, tmp_value);
 	    }
 	  break;
 	case ROTATE:
+	  tmp_value = 1;
+	  if (op[i].op.move.p != NULL){
+	    struct vary_node * tmp;
+	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
+	      if ( !strcmp(tmp->name, op[i].op.rotate.p->name) ){
+		tmp_value = tmp->value;
+		break;
+	      }
+	    }
+	  }
 	  if ( op[i].op.rotate.axis == X )
-	    make = make_rotX( op[i].op.rotate.degrees );
+	    make = make_rotX( op[i].op.rotate.degrees * tmp_value );
 	  else if ( op[i].op.rotate.axis == Y )
-	    make = make_rotY( op[i].op.rotate.degrees );
+	    make = make_rotY( op[i].op.rotate.degrees * tmp_value );
 	  else if ( op[i].op.rotate.axis == Z )
-	    make = make_rotZ( op[i].op.rotate.degrees );
+	    make = make_rotZ( op[i].op.rotate.degrees * tmp_value );
 	  matrix_mult( TOP_OF_(cstack), make );
 	  TOP_OF_(cstack) = make;
 	  ////
@@ -502,7 +522,7 @@ void my_main() {
 		 op[i].op.rotate.degrees);
 	  if (op[i].op.rotate.p != NULL)
 	    {
-	      printf("\tknob: %s",op[i].op.rotate.p->name);
+	      printf("\tknob: %s = %.2f",op[i].op.rotate.p->name, tmp_value);
 	    }
 	  break;
 	case SAVE_KNOBS:
@@ -550,6 +570,12 @@ void my_main() {
 	  break;
 	}
       printf("\n");
+    }
+    if (num_frames - 1){
+      printf("saving frame %03d\n", frame);
+      sprintf( frame_name, "anim/%s%03d.png", name, frame);
+      save_extension(s, frame_name); 
+      clear_screen(s, back);
     }
   }
 }
