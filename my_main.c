@@ -154,10 +154,7 @@ struct vary_node ** second_pass() {
   
   int i, j;
   
-  printf("(second pass)%lu\n", sizeof(knobs));
-
   for (i=0;i<lastop;i++) {
-    printf("(second pass)%d: ",i);
     switch (op[i].opcode)
       {
 
@@ -166,26 +163,22 @@ struct vary_node ** second_pass() {
 	  if (j >= op[i].op.vary.start_frame && j <= op[i].op.vary.end_frame ) {
 	    struct vary_node * tmp = (struct vary_node *)malloc(sizeof(struct vary_node));
 	    strncpy( tmp->name, op[i].op.vary.p->name, sizeof(tmp->name) );
-	    tmp->value = j * ((op[i].op.vary.end_val - op[i].op.vary.start_val) /
-			      (op[i].op.vary.end_frame - op[i].op.vary.start_frame) );
+	    tmp->value = op[i].op.vary.start_val +
+	      ((j - op[i].op.vary.start_frame) * ((op[i].op.vary.end_val - op[i].op.vary.start_val) /
+		    (op[i].op.vary.end_frame - op[i].op.vary.start_frame) ));
 
 	    tmp->next = knobs[j];
 	    knobs[j] = tmp;
-	    printf("(second pass) setting vary %s to %.3f for frame %d, next = %p\n",
-		   tmp->name,
-		   tmp->value,
-		   j, tmp->next);
 	  }
 	}
 	////
-	printf("setting Vary: %4.0f %4.0f, %4.0f %4.0f",
+	printf("(second pass)setting Vary: %4.0f %4.0f, %4.0f %4.0f\n",
 	       op[i].op.vary.start_frame,
 	       op[i].op.vary.end_frame,
 	       op[i].op.vary.start_val,
 	       op[i].op.vary.end_val);
 	break;
       }
-    printf("\n");
   }
   
   return knobs;
@@ -255,17 +248,17 @@ void my_main() {
   else
     num_frames = 1;
 
-  /* int k; */
-  /* for (k = 0;k < num_frames;k++) { */
-  /*   struct vary_node * tmp = knobs[k]; */
+  int k;
+  for (k = 0;k < num_frames;k++) {
+    struct vary_node * tmp = knobs[k];
 
-  /*   printf("frame number %d: ", k); */
-  /*   while (tmp){ */
-  /*     printf("\t%s: %.3f, ", tmp->name, tmp->value); */
-  /*     tmp = tmp->next; */
-  /*   } */
-  /*   printf("\n"); */
-  /*     } */
+    printf("frame number %d: ", k);
+    while (tmp){
+      printf("\t%s: %.3f, ", tmp->name, tmp->value);
+      tmp = tmp->next;
+    }
+    printf("\n");
+  }
     
   print_knobs();
   
@@ -298,6 +291,7 @@ void my_main() {
 
   for (frame = 0; frame<num_frames; frame++) {
     printf("frame # %d of %d\n", frame, num_frames);
+    print_knobs();
     for (i=0;i<lastop;i++) {  
       printf("%d: ",i);
       switch (op[i].opcode)
@@ -452,6 +446,7 @@ void my_main() {
 	  if (op[i].op.move.p != NULL){
 	    struct vary_node * tmp;
 	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
+	      printf("not knob %s\n", tmp->name);
 	      if ( !strcmp(tmp->name, op[i].op.move.p->name) ){
 		tmp_value = tmp->value;
 		break;
@@ -474,7 +469,7 @@ void my_main() {
 	  break;
 	case SCALE:
 	  tmp_value = 1;
-	  if (op[i].op.move.p != NULL){
+	  if (op[i].op.scale.p != NULL){
 	    struct vary_node * tmp;
 	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
 	      if ( !strcmp(tmp->name, op[i].op.scale.p->name) ){
@@ -499,9 +494,9 @@ void my_main() {
 	  break;
 	case ROTATE:
 	  tmp_value = 1;
-	  if (op[i].op.move.p != NULL){
+	  if (op[i].op.rotate.p != NULL){
 	    struct vary_node * tmp;
-	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
+	    for( tmp = knobs[frame]; tmp; tmp = tmp->next){
 	      if ( !strcmp(tmp->name, op[i].op.rotate.p->name) ){
 		tmp_value = tmp->value;
 		break;
@@ -575,7 +570,14 @@ void my_main() {
       printf("saving frame %03d\n", frame);
       sprintf( frame_name, "anim/%s%03d.png", name, frame);
       save_extension(s, frame_name); 
+
+      //reseting
       clear_screen(s, back);
+      while ( cstack->top )
+	pop(cstack);
     }
+  }
+  if (num_frames - 1){
+    make_animation( name );
   }
 }

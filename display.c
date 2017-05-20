@@ -147,7 +147,7 @@ void make_animation( char * name ) {
 
   sprintf(name_arg, "anim/%s*", name);
   strncat(name, ".gif", 128);
-  printf("Making animation: %s\n", name);
+  printf("\n--->Making animation: %s<---\n", name);
   f = fork();
   if (f == 0) {
     e = execlp("convert", "convert", "-delay", "3", name_arg, name, NULL);
