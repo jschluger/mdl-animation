@@ -1,4 +1,4 @@
-/*========== my_main.c ==========
+/*========== my_Amain.c ==========
 
   This is the only file you need to modify in order
   to get a working mdl project (for now).
@@ -118,12 +118,12 @@ int first_pass() {
   if ( frames ) {
       if ( !basename ) {
 	strncpy( name, "frame", sizeof(name) );
-	printf( "no basename set, using default '%s'\n", name );
+	printf( "!no basename set, using default '%s'\n", name );
       }
-      printf( "num_frames: %d\nname: '%s'\n", num_frames, name );
+      printf( "\t-->num_frames: %d\n\t-->name: '%s'\n\n", num_frames, name );
       return 1;
   }
-    
+    printf("\n");
   return 0;
 }
 
@@ -248,20 +248,6 @@ void my_main() {
   else
     num_frames = 1;
 
-  int k;
-  for (k = 0;k < num_frames;k++) {
-    struct vary_node * tmp = knobs[k];
-
-    printf("frame number %d: ", k);
-    while (tmp){
-      printf("\t%s: %.3f, ", tmp->name, tmp->value);
-      tmp = tmp->next;
-    }
-    printf("\n");
-  }
-    
-  print_knobs();
-  
   int i, frame;
   screen s;
   double tmp_value;
@@ -290,10 +276,7 @@ void my_main() {
   clear_screen( s, back );
 
   for (frame = 0; frame<num_frames; frame++) {
-    printf("frame # %d of %d\n", frame, num_frames);
-    print_knobs();
     for (i=0;i<lastop;i++) {  
-      printf("%d: ",i);
       switch (op[i].opcode)
 	{ 
 	case LIGHT:
@@ -332,20 +315,6 @@ void my_main() {
 	  matrix_mult(TOP_OF_(cstack), edges);
 	  draw_polygons( edges, s, c );
 	  edges->lastcol = 0;
-	  ////
-	  printf("Sphere: %6.2f %6.2f %6.2f r=%6.2f",
-		 op[i].op.sphere.d[0],op[i].op.sphere.d[1],
-		 op[i].op.sphere.d[2],
-		 op[i].op.sphere.r);
-	  if (op[i].op.sphere.constants != NULL)
-	    {
-	      printf("\tconstants: %s",op[i].op.sphere.constants->name);
-	    }
-	  if (op[i].op.sphere.cs != NULL)
-	    {
-	      printf("\tcs: %s",op[i].op.sphere.cs->name);
-	    }
-	
 	  break;
 	case TORUS:
 	  add_torus( edges,
@@ -357,20 +326,6 @@ void my_main() {
 	  matrix_mult(TOP_OF_(cstack), edges);
 	  draw_polygons( edges, s, c );
 	  edges->lastcol = 0;
-	  ////
-	  printf("Torus: %6.2f %6.2f %6.2f r0=%6.2f r1=%6.2f",
-		 op[i].op.torus.d[0],op[i].op.torus.d[1],
-		 op[i].op.torus.d[2],
-		 op[i].op.torus.r0,op[i].op.torus.r1);
-	  if (op[i].op.torus.constants != NULL)
-	    {
-	      printf("\tconstants: %s",op[i].op.torus.constants->name);
-	    }
-	  if (op[i].op.torus.cs != NULL)
-	    {
-	      printf("\tcs: %s",op[i].op.torus.cs->name);
-	    }
-
 	  break;
 	case BOX:
 	  add_box( edges,
@@ -383,21 +338,6 @@ void my_main() {
 	  matrix_mult(TOP_OF_(cstack), edges);
 	  draw_polygons( edges, s, c );
 	  edges->lastcol = 0;
-	  ////
-	  printf("Box: d0: %6.2f %6.2f %6.2f d1: %6.2f %6.2f %6.2f",
-		 op[i].op.box.d0[0],op[i].op.box.d0[1],
-		 op[i].op.box.d0[2],
-		 op[i].op.box.d1[0],op[i].op.box.d1[1],
-		 op[i].op.box.d1[2]);
-	  if (op[i].op.box.constants != NULL)
-	    {
-	      printf("\tconstants: %s",op[i].op.box.constants->name);
-	    }
-	  if (op[i].op.box.cs != NULL)
-	    {
-	      printf("\tcs: %s",op[i].op.box.cs->name);
-	    }
-
 	  break;
 	case LINE:
 	  add_edge( edges,
@@ -410,24 +350,6 @@ void my_main() {
 	  matrix_mult(TOP_OF_(cstack), edges);
 	  draw_lines( edges, s, c );
 	  edges->lastcol = 0;
-	  ////
-	  printf("Line: from: %6.2f %6.2f %6.2f to: %6.2f %6.2f %6.2f",
-		 op[i].op.line.p0[0],op[i].op.line.p0[1],
-		 op[i].op.line.p0[1],
-		 op[i].op.line.p1[0],op[i].op.line.p1[1],
-		 op[i].op.line.p1[1]);
-	  if (op[i].op.line.constants != NULL)
-	    {
-	      printf("\n\tConstants: %s",op[i].op.line.constants->name);
-	    }
-	  if (op[i].op.line.cs0 != NULL)
-	    {
-	      printf("\n\tCS0: %s",op[i].op.line.cs0->name);
-	    }
-	  if (op[i].op.line.cs1 != NULL)
-	    {
-	      printf("\n\tCS1: %s",op[i].op.line.cs1->name);
-	    }
 	  break;
 	case MESH:
 	  printf("Mesh: filename: %s",op[i].op.mesh.name);
@@ -446,7 +368,6 @@ void my_main() {
 	  if (op[i].op.move.p != NULL){
 	    struct vary_node * tmp;
 	    for(tmp = knobs[frame]; tmp; tmp = tmp->next){
-	      printf("not knob %s\n", tmp->name);
 	      if ( !strcmp(tmp->name, op[i].op.move.p->name) ){
 		tmp_value = tmp->value;
 		break;
@@ -458,14 +379,6 @@ void my_main() {
 				 op[i].op.move.d[2] * tmp_value );
 	  matrix_mult( TOP_OF_(cstack), make );
 	  TOP_OF_(cstack) = make;
-	  ////
-	  printf("Move: %6.2f %6.2f %6.2f",
-		 op[i].op.move.d[0],op[i].op.move.d[1],
-		 op[i].op.move.d[2]);
-	  if (op[i].op.move.p != NULL)
-	    {
-	      printf("\tknob: %s = %.2f",op[i].op.move.p->name, tmp_value);
-	    }
 	  break;
 	case SCALE:
 	  tmp_value = 1;
@@ -483,14 +396,6 @@ void my_main() {
 			      op[i].op.scale.d[2] * tmp_value );
 	  matrix_mult( TOP_OF_(cstack), make );
 	  TOP_OF_(cstack) = make;
-	  ////
-	  printf("Scale: %6.2f %6.2f %6.2f",
-		 op[i].op.scale.d[0],op[i].op.scale.d[1],
-		 op[i].op.scale.d[2]);
-	  if (op[i].op.scale.p != NULL)
-	    {
-	      printf("\tknob: %s = %.2f",op[i].op.scale.p->name, tmp_value);
-	    }
 	  break;
 	case ROTATE:
 	  tmp_value = 1;
@@ -511,14 +416,6 @@ void my_main() {
 	    make = make_rotZ( op[i].op.rotate.degrees * tmp_value );
 	  matrix_mult( TOP_OF_(cstack), make );
 	  TOP_OF_(cstack) = make;
-	  ////
-	  printf("Rotate: axis: %6.2f degrees: %6.2f",
-		 op[i].op.rotate.axis,
-		 op[i].op.rotate.degrees);
-	  if (op[i].op.rotate.p != NULL)
-	    {
-	      printf("\tknob: %s = %.2f",op[i].op.rotate.p->name, tmp_value);
-	    }
 	  break;
 	case SAVE_KNOBS:
 	  printf("Save knobs: %s",op[i].op.save_knobs.p->name);
@@ -532,13 +429,9 @@ void my_main() {
 	  break;
 	case PUSH:
 	  push( cstack );
-	  ////
-	  printf("Push");
 	  break;
 	case POP:
 	  pop( cstack );
-	  ////
-	  printf("Pop");
 	  break;
 	case GENERATE_RAYFILES:
 	  printf("Generate Ray Files");
@@ -546,8 +439,6 @@ void my_main() {
 	case SAVE:
 	  save_extension(s, op[i].op.save.p->name); 
 	  clear_screen(s, back);
-	  ////
-	  printf("Save: %s",op[i].op.save.p->name);
 	  break;
 	case SHADING:
 	  printf("Shading: %s",op[i].op.shading.p->name);
@@ -561,13 +452,11 @@ void my_main() {
 	case DISPLAY:
 	  display(s);
 	  clear_screen(s, back);
-	  printf("Display");
 	  break;
 	}
-      printf("\n");
     }
     if (num_frames - 1){
-      printf("saving frame %03d\n", frame);
+      printf("\nsaving frame %03d", frame);
       sprintf( frame_name, "anim/%s%03d.png", name, frame);
       save_extension(s, frame_name); 
 
