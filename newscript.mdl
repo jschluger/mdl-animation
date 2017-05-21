@@ -1,0 +1,23 @@
+basename doggo
+frames 50
+
+push
+move 250 250 0
+rotate x 90
+rotate x 360 spin
+rotate y 360 spin
+
+push
+move 0 0 -100
+rotate x -360 spin
+rotate z 720 spin
+torus 0 0 0 25 100
+pop
+push
+move 0 0 -100
+rotate x -360 spin
+rotate y 720 spin
+sphere 0 0 0 50
+pop
+
+vary spin 0 49 0 1
