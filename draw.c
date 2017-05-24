@@ -96,6 +96,23 @@ void scanline( struct matrix * polygon, int point, screen s ) {
     }
   }
   printf("top: %.2f\tmiddle: %.2f\t bottom: %.2f\n", polygon->m[Y][T], polygon->m[Y][M], polygon->m[Y][B]);
+  double y = polygon->m[Y][T] - polygon->m[Y][B];
+  int dy = 1;
+
+  double x0 = polygon->m[X][T] - polygon->m[X][B];
+  double xd0 = x0 / ( polygon->m[Y][T] - polygon->m[Y][B] );
+  
+  double x1 = polygon->m[X][T] - polygon->m[X][M];
+  double xd1 = x1 / ( polygon->m[Y][T] - polygon->m[Y][M] );
+
+  int i;
+  for (i = 0; i < y; i+=dy) {
+    //add teh point
+    
+
+  }
+
+    
 }
 
 
