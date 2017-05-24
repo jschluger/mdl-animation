@@ -59,6 +59,46 @@ struct matrix * generate_normal( struct matrix * polygon, int point ) {
 	     
 }
 
+void scanline( struct matrix * polygon, int point, screen s ) {
+  int B, M, T; // index of where Bottom, Middle, and Top point of the polygon are
+  if ( polygon->m[Y][point] > polygon->m[Y][point + 1] ) {
+    if ( polygon->m[Y][point + 1] >= polygon->m[Y][point + 2] ) {
+      T = point;
+      M = point + 1;
+      B = point + 2;
+    }
+    else if ( polygon->m[Y][point + 2] >= polygon->m[Y][point] ) {
+      T = point + 2;
+      M = point;
+      B = point + 1;
+    }
+    else {
+      T = point;
+      M = point + 2;
+      B = point + 1;
+    }
+  }
+  else if ( polygon->m[Y][point + 1] > polygon->m[Y][point] ) {
+    if ( polygon->m[Y][point] >= polygon->m[Y][point + 2] ) {
+      T = point + 1;
+      M = point;
+      B = point + 2;
+    }
+    else if ( polygon->m[Y][point + 2] >= polygon->m[Y][point] ) {
+      T = point + 2;
+      M = point + 1;
+      B = point;
+    }
+    else {
+      T = point + 1;
+      M = point + 2;
+      B = point;
+    }
+  }
+  printf("top: %.2f\tmiddle: %.2f\t bottom: %.2f\n", polygon->m[Y][T], polygon->m[Y][M], polygon->m[Y][B]);
+}
+
+
 /*======== void draw_polygons() ==========
 Inputs:   struct matrix *polygons
           screen s
@@ -81,6 +121,7 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
     //printf("\npolygon #%d...z of normal: %f", point, normal->m[Z][0]);
 
     if ( normal->m[Z][0] >= 0 ) {
+      scanline( polygons, point, s );
       //printf("\tdrawing polygon");
       draw_line( polygons->m[0][point],
 		 polygons->m[1][point],

@@ -42,7 +42,7 @@ run: all
 	./mdl simple_anim.mdl
 
 my: all
-	./mdl myscript.mdl
+	./mdl testing.mdl
 
 clean:
 	rm *.o *~
