@@ -61,6 +61,10 @@ struct matrix * generate_normal( struct matrix * polygon, int point ) {
 
 void scanline( struct matrix * polygon, int point, screen s ) {
   int B, M, T; // index of where Bottom, Middle, and Top point of the polygon are
+  printf("y[point]: %.2f\n", polygon->m[Y][point]);
+  printf("y[point+1]: %.2f\n", polygon->m[Y][point+1]);
+  printf("y[point+2]: %.2f\n", polygon->m[Y][point+2]);
+  
   if ( polygon->m[Y][point] > polygon->m[Y][point + 1] ) {
     if ( polygon->m[Y][point + 1] >= polygon->m[Y][point + 2] ) {
       T = point;
@@ -95,24 +99,37 @@ void scanline( struct matrix * polygon, int point, screen s ) {
       B = point;
     }
   }
+  else {
+    printf("ruh roh\n");
+  }
+  printf("T: %d\n", T);
+  printf("M: %d\n", M);
+  printf("B: %d\n", B);
   printf("top: %.2f\tmiddle: %.2f\t bottom: %.2f\n", polygon->m[Y][T], polygon->m[Y][M], polygon->m[Y][B]);
   double y = polygon->m[Y][T] - polygon->m[Y][B];
   int dy = 1;
 
   double x0 = polygon->m[X][T] - polygon->m[X][B];
-  double xd0 = x0 / ( polygon->m[Y][T] - polygon->m[Y][B] );
+  printf( "%.2f\n",  ( polygon->m[Y][T] - polygon->m[Y][B])?
+	  ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1 );
+  
+  double xd0 = ( polygon->m[Y][T] - polygon->m[Y][B])?
+    ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1;
   
   double x1 = polygon->m[X][T] - polygon->m[X][M];
-  double xd1 = x1 / ( polygon->m[Y][T] - polygon->m[Y][M] );
+  printf( "%.2f\n", ( polygon->m[Y][T] - polygon->m[Y][M] )?
+	  ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1 );
+  double xd1 = ( polygon->m[Y][T] - polygon->m[Y][M] )?
+    ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1;
 
-  int i;
-  for (i = 0; i < y; i+=dy) {
-    //add teh point
+
+  printf("y: %.2f\tdy: %d\tx0: %.2f\txd0: %.2f\tx1: %.2f\txd1: %.2f\n", y, dy, x0, xd0, x1, xd1);
+  /*   int i; */
+  /* for (i = 0; i < y; i+=dy) { */
+  /*   //add teh point */
     
 
-  }
-
-    
+  /* } */
 }
 
 
@@ -138,8 +155,9 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
     //printf("\npolygon #%d...z of normal: %f", point, normal->m[Z][0]);
 
     if ( normal->m[Z][0] >= 0 ) {
+      printf("before scan, point: %d of %d\n", point, polygons->lastcol);
       scanline( polygons, point, s );
-      //printf("\tdrawing polygon");
+      printf("after scan\n");
       draw_line( polygons->m[0][point],
 		 polygons->m[1][point],
 		 polygons->m[0][point+1],
@@ -155,9 +173,10 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
 		 polygons->m[0][point+1],
 		 polygons->m[1][point+1],
 		 s, c );	       
+      printf("after drawigng lines\n");
     }
   }
-  //printf("\n");
+  printf("after loop\n");
 }
 
 /*======== void add_box() ==========

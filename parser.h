@@ -5,7 +5,7 @@
 #include "matrix.h"
 
 #define MAX_COMMANDS 512
-#define STEP .05
+#define STEP .2
 
 extern int lastop;
 

@@ -314,6 +314,7 @@ void my_main() {
 		      op[i].op.sphere.r, STEP );
 	  matrix_mult(TOP_OF_(cstack), edges);
 	  draw_polygons( edges, s, c );
+	  printf("after drawing polys\n");
 	  edges->lastcol = 0;
 	  break;
 	case TORUS:
