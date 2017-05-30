@@ -61,11 +61,17 @@ struct matrix * generate_normal( struct matrix * polygon, int point ) {
 
 void scanline( struct matrix * polygon, int point, screen s ) {
   int B, M, T; // index of where Bottom, Middle, and Top point of the polygon are
+  B = point;
+  M = point + 1;
+  T = point + 2;
+
+  color c;
+  
   printf("y[point]: %.2f\n", polygon->m[Y][point]);
   printf("y[point+1]: %.2f\n", polygon->m[Y][point+1]);
   printf("y[point+2]: %.2f\n", polygon->m[Y][point+2]);
   
-  if ( polygon->m[Y][point] > polygon->m[Y][point + 1] ) {
+  if ( polygon->m[Y][point] >= polygon->m[Y][point + 1] ) {
     if ( polygon->m[Y][point + 1] >= polygon->m[Y][point + 2] ) {
       T = point;
       M = point + 1;
@@ -82,7 +88,7 @@ void scanline( struct matrix * polygon, int point, screen s ) {
       B = point + 1;
     }
   }
-  else if ( polygon->m[Y][point + 1] > polygon->m[Y][point] ) {
+  else if ( polygon->m[Y][point + 1] >= polygon->m[Y][point] ) {
     if ( polygon->m[Y][point] >= polygon->m[Y][point + 2] ) {
       T = point + 1;
       M = point;
@@ -100,8 +106,12 @@ void scanline( struct matrix * polygon, int point, screen s ) {
     }
   }
   else {
-    printf("ruh roh\n");
+    printf("\n\n\t\t-------->\tRUH ROH\t<--------\n");
   }
+  c.red = (int)(polygon->m[Z][B]) % 255;
+  c.blue = (int)(polygon->m[Y][M] + polygon->m[Z][T]) % 255;
+  c.green = (int)(polygon->m[X][T] - polygon->m[Y][B]) % 255;
+  
   printf("T: %d\n", T);
   printf("M: %d\n", M);
   printf("B: %d\n", B);
@@ -110,26 +120,45 @@ void scanline( struct matrix * polygon, int point, screen s ) {
   int dy = 1;
 
   double x0 = polygon->m[X][T] - polygon->m[X][B];
-  printf( "%.2f\n",  ( polygon->m[Y][T] - polygon->m[Y][B])?
-	  ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1 );
-  
   double xd0 = ( polygon->m[Y][T] - polygon->m[Y][B])?
     ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1;
   
   double x1 = polygon->m[X][T] - polygon->m[X][M];
-  printf( "%.2f\n", ( polygon->m[Y][T] - polygon->m[Y][M] )?
-	  ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1 );
   double xd1 = ( polygon->m[Y][T] - polygon->m[Y][M] )?
     ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1;
 
+  double x2 = x0 - x1;
+  double xd2 = ( polygon->m[Y][M] - polygon->m[Y][B] )?
+    ( x2 / (polygon->m[Y][M] - polygon->m[Y][B]) ): 1;
+  
+  /* printf( "%.2f\n",  ( polygon->m[Y][T] - polygon->m[Y][B])? */
+  /* 	  ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1 ); */
+  
+  /* printf( "%.2f\n", ( polygon->m[Y][T] - polygon->m[Y][M] )? */
+  /* 	  ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1 ); */
+  
 
   printf("y: %.2f\tdy: %d\tx0: %.2f\txd0: %.2f\tx1: %.2f\txd1: %.2f\n", y, dy, x0, xd0, x1, xd1);
-  /*   int i; */
-  /* for (i = 0; i < y; i+=dy) { */
-  /*   //add teh point */
-    
 
-  /* } */
+  int yy;
+  double xA, xB;
+
+  if (! x1 ) xd1 *= -1;
+  if (! x2 ) xd2 *= -1;
+  
+  for (yy = polygon->m[Y][B], xA = polygon->m[X][B], xB = polygon->m[X][B];
+       yy < polygon->m[Y][T];
+       yy+=dy) {
+
+    draw_line( xA, yy, xB, yy, s, c ) ;
+    xA += xd0;
+    
+    if ( yy <= polygon->m[Y][M] )
+      xB += xd2;
+    else
+      xB += xd1;
+
+  }
 }
 
 

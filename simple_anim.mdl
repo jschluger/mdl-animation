@@ -2,7 +2,7 @@ frames 50
 basename simple
 push
 move 250 250 0
-scale 2 2 2 bigenator
+//scale 2 2 2 bigenator
 rotate y 360 spinny
 sphere 0 0 0 100 
 vary bigenator 0 24 0 1
