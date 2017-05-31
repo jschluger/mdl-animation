@@ -88,13 +88,13 @@ void scanline( struct matrix * polygon, int point, screen s ) {
       B = point + 1;
     }
   }
-  else if ( polygon->m[Y][point + 1] >= polygon->m[Y][point] ) {
+  else { //if ( polygon->m[Y][point + 1] >= polygon->m[Y][point] ) {
     if ( polygon->m[Y][point] >= polygon->m[Y][point + 2] ) {
       T = point + 1;
       M = point;
       B = point + 2;
     }
-    else if ( polygon->m[Y][point + 2] >= polygon->m[Y][point] ) {
+    else if ( polygon->m[Y][point + 2] >= polygon->m[Y][point + 1] ) {
       T = point + 2;
       M = point + 1;
       B = point;
@@ -105,13 +105,65 @@ void scanline( struct matrix * polygon, int point, screen s ) {
       B = point;
     }
   }
-  else {
-    printf("\n\n\t\t-------->\tRUH ROH\t<--------\n");
-  }
-  c.red = (int)(polygon->m[Z][B]) % 255;
-  c.blue = (int)(polygon->m[Y][M] + polygon->m[Z][T]) % 255;
-  c.green = (int)(polygon->m[X][T] - polygon->m[Y][B]) % 255;
+
+  /* c.red = abs((int)(polygon->m[X][B] - polygon->m[Y][B])) % 255; */
+  /* c.blue = abs((int)(polygon->m[Z][M])) % 255; */
+  /* c.green = abs((int)(polygon->m[X][T] - polygon->m[Z][B])) % 255; */
+
+  c.red = 0;
+  c.blue = 255;
+  c.green = 0;
+
+  color top;
+  top.red = 255;
+  top.green = 0;
+  top.blue = 0;
+
+  color mid;
+  mid.red = 0;
+  mid.green = 255;
+  mid.blue = 0;
+
+  color bot;
+  bot.red = 0;
+  bot.green = 0;
+  bot.blue = 250;
   
+
+  /* int k; */
+  /* for (k = 0; k< point; k++){ */
+  /*   plot(s, top, (int)(polygon->m[X][T]), (int)(polygon->m[Y][T])); */
+  /*   plot(s, top, (int)(polygon->m[X][T])+k, (int)(polygon->m[Y][T])); */
+  /*   plot(s, top, (int)(polygon->m[X][T])-k, (int)(polygon->m[Y][T])); */
+  /*   plot(s, top, (int)(polygon->m[X][T]), (int)(polygon->m[Y][T])+k); */
+  /*   plot(s, top, (int)(polygon->m[X][T]), (int)(polygon->m[Y][T])-k); */
+  /*   plot(s, top, (int)(polygon->m[X][T])+k, (int)(polygon->m[Y][T])+k); */
+  /*   plot(s, top, (int)(polygon->m[X][T])-k, (int)(polygon->m[Y][T])-k); */
+  /*   plot(s, top, (int)(polygon->m[X][T])+k, (int)(polygon->m[Y][T])-k); */
+  /*   plot(s, top, (int)(polygon->m[X][T])-k, (int)(polygon->m[Y][T])+k); */
+
+  /*   plot(s, mid, (int)(polygon->m[X][M]), (int)(polygon->m[Y][M])); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])+k, (int)(polygon->m[Y][M])); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])-k, (int)(polygon->m[Y][M])); */
+  /*   plot(s, mid, (int)(polygon->m[X][M]), (int)(polygon->m[Y][M])+k); */
+  /*   plot(s, mid, (int)(polygon->m[X][M]), (int)(polygon->m[Y][M])-k); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])+k, (int)(polygon->m[Y][M])+k); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])-k, (int)(polygon->m[Y][M])-k); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])+k, (int)(polygon->m[Y][M])-k); */
+  /*   plot(s, mid, (int)(polygon->m[X][M])-k, (int)(polygon->m[Y][M])+k); */
+
+  /*   plot(s, bot, (int)(polygon->m[X][B]), (int)(polygon->m[Y][B])); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])+k, (int)(polygon->m[Y][B])); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])-k, (int)(polygon->m[Y][B])); */
+  /*   plot(s, bot, (int)(polygon->m[X][B]), (int)(polygon->m[Y][B])+k); */
+  /*   plot(s, bot, (int)(polygon->m[X][B]), (int)(polygon->m[Y][B])-k); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])+k, (int)(polygon->m[Y][B])+k); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])-k, (int)(polygon->m[Y][B])-k); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])+k, (int)(polygon->m[Y][B])-k); */
+  /*   plot(s, bot, (int)(polygon->m[X][B])-k, (int)(polygon->m[Y][B])+k); */
+    
+  /* } */
+
   printf("T: %d\n", T);
   printf("M: %d\n", M);
   printf("B: %d\n", B);
@@ -121,15 +173,15 @@ void scanline( struct matrix * polygon, int point, screen s ) {
 
   double x0 = polygon->m[X][T] - polygon->m[X][B];
   double xd0 = ( polygon->m[Y][T] - polygon->m[Y][B])?
-    ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1;
+    ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 0;
   
   double x1 = polygon->m[X][T] - polygon->m[X][M];
   double xd1 = ( polygon->m[Y][T] - polygon->m[Y][M] )?
-    ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1;
+    ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 0;
 
   double x2 = x0 - x1;
   double xd2 = ( polygon->m[Y][M] - polygon->m[Y][B] )?
-    ( x2 / (polygon->m[Y][M] - polygon->m[Y][B]) ): 1;
+    ( x2 / (polygon->m[Y][M] - polygon->m[Y][B]) ): x2;
   
   /* printf( "%.2f\n",  ( polygon->m[Y][T] - polygon->m[Y][B])? */
   /* 	  ( x0 / (polygon->m[Y][T] - polygon->m[Y][B]) ): 1 ); */
@@ -138,19 +190,20 @@ void scanline( struct matrix * polygon, int point, screen s ) {
   /* 	  ( x1 / (polygon->m[Y][T] - polygon->m[Y][M]) ): 1 ); */
   
 
-  printf("y: %.2f\tdy: %d\tx0: %.2f\txd0: %.2f\tx1: %.2f\txd1: %.2f\n", y, dy, x0, xd0, x1, xd1);
+  printf("y: %.2f\tdy: %d\tx0: %.2f\txd0: %.2f\tx1: %.2f\txd1: %.2f\tx2: %.2f\txd2: %.2f\n", y, dy, x0, xd0, x1, xd1, x2, xd2);
 
   int yy;
   double xA, xB;
 
-  if (! x1 ) xd1 *= -1;
-  if (! x2 ) xd2 *= -1;
+  //if (! x1 ) xd1 *= -1;
+  //if (! x2 ) xd2 *= -1;
   
   for (yy = polygon->m[Y][B], xA = polygon->m[X][B], xB = polygon->m[X][B];
        yy < polygon->m[Y][T];
        yy+=dy) {
-
+    
     draw_line( xA, yy, xB, yy, s, c ) ;
+    printf("drawing line (%.2f, %d) to (%.2f, %d)\n", xA, yy, xB, yy);
     xA += xd0;
     
     if ( yy <= polygon->m[Y][M] )

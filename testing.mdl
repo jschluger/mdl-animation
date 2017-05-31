@@ -1,7 +1,18 @@
 push
 move 250 250 0
 scale 2 2 2
-rotate y 360
-sphere 50 50 0 100
-box -50 -50 0 50 60 70
+rotate y 45
+rotate x -45
+box 0 0 0 50 60 70
 display
+
+rotate y 15
+rotate x 45
+box 0 0 0 50 60 70
+display
+
+rotate y -30
+rotate x 60
+box 0 0 0 50 60 70
+display
+
